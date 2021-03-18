@@ -1,0 +1,88 @@
+5. In a for loop, and can be statements more complicated than declaring, initializing, and updating a loop-control variable. How can I take advantage of this ability?
+	The for statement provides a compact way to iterate over a range of value programme often refer to it as the "for loop".
+because of the way in which it repeatedly loops until a particular condition is satisfied.
+
+
+for(initialization;termination;increment)
+{
+statements(s);
+}
+
+*intialization expression intialize the loop;it is executed onces, as the loop begins
+*when the termination expression evaluates to false the loop terminates.
+*the increment expression is invoked after each iteration through the loop.it is perfectly acceptable for this expression to increment or decrement a value.
+
+Example:
+	class ForDemo
+	{
+		public static void main(String[] args)
+		{
+			for(int i=1;i<11;i++){
+				System.out.println("count is:" +i);
+			}
+		}
+	}
+
+apart from this we can use break and continue statement .
+Break statement:
+ this statement is used to jump out of a loop when a certain condition is met.
+ex:The example jumps out of the loop when the value of i is equal to 4.
+    public class Main {
+    public static void main(String[] args) {
+        for (int i = 0; i < 10; i++) {
+            if (i == 4) {
+                break;
+            }
+            System.out.println(i);
+        }
+    }
+    }
+
+continue statement:The continue statement breaks one iteration (in the loop), if a specified condition occurs,
+and continues with the next iteration in the loop.
+ex:This example skips the value of 4.
+    public class Main {
+    public static void main(String[] args) {
+         for (int i = 0; i < 6; i++) {
+            if (i == 4) {
+                continue;
+             }
+           System.out.println(i);
+          }
+    }
+    }
+
+
+
+
+
+
+6.It is fine to use a double variable as a loop-control variable, especially if you want to loop through
+fractional values or increment by fractional values.
+
+However it is advisable not to use "==" to compare for the condition to end the loop. Due to precision errors
+this can easily result in an infinite loop in spite of the best intentions. That's why we need to use "<=".
+
+Besides, if the value of a double control variable is too large, it's not a good idea to use it in the for loop.
+
+
+7.All the for loops can be written as while loops, and vice-versa. Just use whichever seems more appropriate to the task
+at hand.
+
+In general, you should use for loop when you know how many times the loop should run. If you want the loop to break
+based on a condition other than number of times it runs, you should use while loop.
+
+Typically,
+
+<initialization>
+while(<condition>) {
+...
+<updation>
+}
+
+is equivalent to:
+
+for(<initialization>;<condition>;<updation>)
+{
+    ....
+}
