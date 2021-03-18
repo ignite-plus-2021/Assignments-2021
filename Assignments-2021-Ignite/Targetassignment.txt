@@ -1,0 +1,399 @@
+**********************************************************************************************************************************************************************************************************
+CORE JAVA ASSIGNMENTS
+**********************************************************************************************************************************************************************************************************
+
+Q1. Write a program that takes three integer command-line arguments and prints equal if all three are equal, and not equal otherwise.
+==========================================================================================================================================================================================================
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+        //Printing command line arguments
+        System.out.println(args[0]);
+        System.out.println(args[1]);
+        System.out.println(args[2]);
+
+        //Converting strings to integers and checking if they are equal using if and else
+	    if(Integer.parseInt(args[0])==Integer.parseInt(args[1]) && Integer.parseInt(args[1])==Integer.parseInt(args[2]))
+        {
+            System.out.println("Equal");
+
+        }
+	    else
+        {
+            System.out.println("Not equal");
+        }
+    }
+}
+
+*****************************************************************************************************************************************************************************************************
+
+Q2. Write a Java program to sort a given binary array in linear times. b_nums[] = { 0, 1, 1, 0, 1, 1, 0, 1, 0, 0 } Output: After sorting: [0, 0, 0, 0, 0, 1, 1, 1, 1, 1]
+=====================================================================================================================================================================================================
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        //Asking the length of the string
+        System.out.println("Enter the length of string");
+
+        Scanner sc= new Scanner(System.in);
+
+        int len= sc.nextInt();
+
+        int[] numbers = new int[len];
+        //Taking the array elements
+        System.out.println("Enter the numbers");
+        for(int i=0;i<len;i++)
+        {
+            numbers[i]=sc.nextInt();
+        }
+        int count=0;
+        //Counting number of 1's
+        for(int i=0;i< numbers.length;i++)
+        {
+            if(numbers[i]==1)
+                count++;
+        }
+
+        int[] outputarray = new int[numbers.length];
+
+        int j=0;
+        //Assigning 0 to the length-count and rest will be 1
+        for(;j< outputarray.length-count;j++)
+        {
+            outputarray[j]=0;
+        }
+        //Assigning 1
+        for(;j<outputarray.length;j++)
+        {
+            outputarray[j]=1;
+        }
+
+        //Printing the sorted array
+        System.out.println("The sorted array is:");
+        for(int i=0;i< outputarray.length;i++)
+        {
+            System.out.println(outputarray[i]);
+        }
+    }
+}
+
+***************************************************************************************************************************************************************************************************************
+
+Q3. Write a program that takes an integer command-line argument n and prints all the positive powers of 2 less than or equal to n. Make sure that your program works properly for all values of n.
+================================================================================================================================================================================================================
+package com.company;
+
+import java.math.BigInteger;
+
+public class Main {
+
+    public static void main(String[] args) {
+        BigInteger x;
+        //Printing the first element if args[0] will be equal to 0
+        x=BigInteger.ONE;
+        System.out.println("For 0: "+x);
+        //Printing rest of the values
+        for(int i=1;i<=Integer.parseInt(args[0]);i++) {
+            x = x.multiply(BigInteger.TWO);
+            System.out.println("For " + i + ": " + x);
+        }
+    }
+}
+
+*******************************************************************************************************************************************************************************************************************
+
+Q4. What is the difference between ++i and i++?
+====================================================================================================================================================================================================================
+Both of them, ++i and i++ are increement operators. First one is a pre-increement operator whereas the later one is the post-increement operator.
+Pre-Increment(++i): We use ++i in our statement if we want to increment first and then use it.
+Post-Increment (i++): We use i++ in our statement if we want to use the current value and then increase the value by 1.
+
+For eg:
+Let,
+int i = 2;
+Then,
+int a = i++; then a = 2 and i = 3
+int b = ++a; then b = 3 and a = 3
+**********************************************************************************************************************************************************************************************************************
+
+Q5. In a for loop, and can be statements more complicated than declaring, initializing, and updating a loop-control variable. How can I take advantage of this ability?
+======================================================================================================================================================================================================================
+Break and Continue.
+Break statement is used to come out of the loop on a particular condition and executes the program followed by the loop.
+Continue is used to start the functioning of loop in the next iteration skipping the statements written after continue.
+
+***********************************************************************************************************************************************************************************************************************
+Q6 Can I use a double variable as a loop-control variable in a for loop?
+=======================================================================================================================================================================================================================
+
+It's perfectly fine to do, especially if you want to loop through fractional values or increment by fractional values.
+
+However, do not compare with == for the condition to end the loop. 
+Due to precision errors, this can easily result in an infinite loop in spite of the best intentions. 
+That's why we should use <=.
+
+*************************************************************************************************************************************************************************************************************************
+
+Q7 . Are there cases where I must use a for loop but not a while, or vice versa?
+=========================================================================================================================================================================================================================
+
+All for loops can be written as while loops, and vice-versa. Just use whichever loop seems more appropriate to the task at hand.
+So in programming, the while loop and a for loop can be used interchangeably in some cases.
+In other cases, it is better to use a while loop, and then again, others, a for loop is better.
+Usually we'll use the for loop when we know how many time we want to execute the loop.  (for x<=100) whereas we normally will use a while loop when the number of iterations are not known.  (while x>0)
+Since the for loop provides incremental change of the variable, it is better to use it when "counting"..
+
+
+************************************************************************************************************************************************************************************************************************************************************************************************************************
+
+Q8. Write a Java program to sort an array of given integers using the Bubble sorting Algorithm and Heap sort Algorithm.
+=========================================================================================================================================================================================================================================================================================================================
+BUBBLE SORT
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+        static void bubblesorting(int[] arr){
+            int n=arr.length;
+
+            for(int i=0;i<n;i++)
+            {
+                for(int j=0;j<n-1-i;j++)
+                {
+                    if(arr[j]>arr[j+1])
+                    {
+                        int temp;
+                        temp=arr[j];
+                        arr[j]=arr[j+1];
+                        arr[j+1]=temp;
+                    }
+                }
+            }
+
+            for(int i=0;i<n;i++)
+            {
+                System.out.println(arr[i]);
+            }
+        }
+
+
+    public static void main(String[] args) {
+            System.out.println("Enter the length of the array to be sorted");
+            Scanner sc=new Scanner(System.in);
+            int n=sc.nextInt();
+            int[] arr= new int[n];
+
+            System.out.println("Enter the array..");
+            for(int i=0;i<n;i++)
+            {
+               arr[i]=sc.nextInt();
+            }
+
+            bubblesorting(arr);
+    }
+}
+
+
+HEAP SORT:
+
+public class HeapSort 
+{ 
+    public void sort(int arr[]) 
+    { 
+        int n = arr.length; 
+
+        for (int i = n / 2 - 1; i >= 0; i--) 
+            heapify(arr, n, i); 
+
+        for (int i=n-1; i>=0; i--) 
+        { 
+            int temp = arr[0]; 
+            arr[0] = arr[i]; 
+            arr[i] = temp; 
+
+            heapify(arr, i, 0); 
+        } 
+    } 
+
+    void heapify(int arr[], int n, int i) 
+    { 
+        int largest = i;  // Initialize largest as root 
+        int l = 2*i + 1;  // left = 2*i + 1 
+        int r = 2*i + 2;  // right = 2*i + 2 
+
+        // If left child is larger than root 
+        if (l < n && arr[l] > arr[largest]) 
+            largest = l; 
+
+        // If right child is larger than largest so far 
+        if (r < n && arr[r] > arr[largest]) 
+            largest = r; 
+
+        // If largest is not root 
+        if (largest != i) 
+        { 
+            int swap = arr[i]; 
+            arr[i] = arr[largest]; 
+            arr[largest] = swap; 
+
+            // Recursively heapify the affected sub-tree 
+            heapify(arr, n, largest); 
+        } 
+    } 
+
+    static void printArray(int arr[]) 
+    { 
+        int n = arr.length; 
+        for (int i=0; i<n; ++i) 
+            System.out.print(arr[i]+" "); 
+        System.out.println(); 
+    } 
+
+   
+    public static void main(String args[]) 
+    { 
+        Scanner sc = new Scanner(System.in); 
+	int n = sc.nextInt();
+        int arr[] = new int[n];
+	for(int i=0;i<n;i++)
+		arr[i] = sc.nextInt(); 
+
+        HeapSort ob = new HeapSort(); 
+        ob.sort(arr); 
+
+        System.out.println("Sorted array is"); 
+        printArray(arr); 
+    } 
+}
+
+=====================================================================================================================================================================================================================================================================================================================================================================================================================
+
+Q9. Write a program to find Leap year.
+
+
+class LeapYear
+{
+    static boolean checkLeapYear(int year)
+    {
+       if (year % 400 == 0)
+            return true;
+     
+       if (year % 100 == 0)
+            return false;
+     
+       if (year % 4 == 0)
+            return true;
+        return false;
+    }
+    
+	public static void main(String[] args) 
+    {
+        int year = 2000;
+        System.out.println(checkLeapYear(2000)? "It's a Leap Year" :"Not a Leap Year" );
+    }
+}
+
+*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************
+
+Q10. Write a program GreatestCommonDivisor that finds the greatest common divisor (gcd) of two integers using Euclid’s algorithm, which is an iterative computation based on the following observation: if x is greater than y, then if y divides x, the gcd of x and y is y; otherwise, the gcd of x and y is the same as the gcd of x % y and y.
+==============================================================================================================================================================================================================================================================================================================================================================================================================
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    static int GreatestCommonDivisor(int x,int y){
+
+            if(x%y==0)
+            {
+                return y;
+            }
+            else if(x%y!=0)
+            {
+                GreatestCommonDivisor(x%y,x);
+
+            }
+            return 1;
+    }
+
+    static int callgcd(int x,int y){
+        if(x>=y)
+        {
+            return GreatestCommonDivisor(x,y);
+        }
+        else
+        {
+            return GreatestCommonDivisor(y,x);
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Enter the numbers x and y");
+        Scanner sc=new Scanner(System.in);
+
+        int x=sc.nextInt();
+        int y=sc.nextInt();
+
+        System.out.println(callgcd(x,y));
+
+    }
+}
+
+
+************************************************************************************************************************************************************************************************************************************************************************************************************
+
+Q11.Write a program converting to binary Input - 19 output -10011 Input - 100000000 Output - 101111101011110000100000000
+====================================================================================================================================================================================================================================================================================================
+package com.company;
+
+public class Main {
+
+    static void dectobin(int n){
+        if(n!=1)
+        {
+            dectobin(n/2);
+        }
+
+            System.out.print(n%2);
+
+    }
+
+
+
+    public static void main(String[] args) {
+	    
+        dectobin(100000000);
+    }
+}
+
+****************************************************************************************************************************************************************************************************************************************************************************************************************
+
+Q12. Write a program Checkerboard that takes an integer command-line argument n and uses a loop nested within a loop to print out a two-dimensional n-by-n checkerboard pattern with alternating spaces and asterisks.
+=============================================================================================================================================================================================================================================================================================
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        for(int i=0;i<Integer.parseInt(args[0]);i++)
+        {
+            for(int j=0;j<Integer.parseInt(args[0]);j++)
+            {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+***************************************************************************************************************************************************************************************************************************************************************************************************
