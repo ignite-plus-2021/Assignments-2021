@@ -1,0 +1,391 @@
+EXCEPTION HANDLING:
+
+import java.util.Scanner;
+class MyException extends Exception 
+{ 
+
+}
+
+public class Swiggy {
+
+    static boolean checkZip(){
+        Scanner sc = new Scanner(System.in);
+          String zip = sc.next();
+          int n= zip.length();
+          String last = zip.substring(n-3,n);
+          if(last.equals("123") || last.equals("456")  || last.equals("789"))
+            return true;
+          else 
+            return false;
+    }
+	public static void main(String args[]) 
+	{ 
+		try
+		{ 
+          if(checkZip())
+		  	throw new MyException();
+		  else
+		    System.out.println("Delivery available in your area");
+		} 
+		catch (MyException ex) 
+		{ 
+			System.out.println("Not deliverable to this zipcode"); 
+		} 
+	} 
+} 
+
+===========================================================================================================================================================================================
+ 
+COREJAVA ASSIGNMENTS:
+
+Q1. Write a program that takes three integer command-line arguments and prints equal if all three are equal, and not equal otherwise.
+
+=>
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Equal
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner sc = new Scanner(System.in);
+		System.out.println( "Enter three numbers:");
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int c = sc.nextInt();
+		if(a==b && b==c)
+			System.out.println("All three numbers are equal");
+	}
+}
+.......................................................................................................................................................................
+
+Q2. Write a Java program to sort a given binary array in linear times. b_nums[] = { 0, 1, 1, 0, 1, 1, 0, 1, 0, 0 } Output: After sorting: [0, 0, 0, 0, 0, 1, 1, 1, 1, 1]
+
+=>
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc = new Scanner(System.in);
+		int i,j=-1;
+		int n = sc.nextInt();
+		int a[] = new int[n];
+		for(i=0;i<n;i++)
+			a[i] = sc.nextInt();
+		for(i=0;i<n;i++){
+			if(a[i]==0){
+				j++;
+				int temp=a[i];
+				a[i]=a[j];
+				a[j]=temp;
+			}
+		}
+		for(i=0;i<n;i++)
+		System.out.print(a[i]+" ");
+	}
+}
+
+.......................................................................................................................................................................
+
+Q3. Write a program that takes an integer command-line argument n and prints all the positive powers of 2 less than or equal to n. Make sure that your program works properly for all values of n.
+
+=>import java.util.Scanner;
+import java.math.MathContext;
+
+
+public class Kth {
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number:");
+        int n = sc.nextInt();
+        for (int i= 1; ((int)(Math.pow(2,i)))<n ; i++)
+        {
+            int x= (int)Math.pow(2,i);
+            System.out.println(x);
+        }
+
+    }
+}
+
+........................................................................................................................................................................................
+
+Q4. What is the difference between ++i and i++?
+
+=>
+++i and i++ both increment the value of i by 1 but in a different way. If ++ precedes the variable, it is called pre-increment operator and it comes after a variable, it is called post-increment operator.
+
+Increment in java is performed in two ways,
+
+1) Post-Increment (i++): we use i++ in our statement if we want to use the current value, and then we want to increment the value of i by 1.
+
+2) Pre-Increment(++i): We use ++i in our statement if we want to increment the value of i by 1 and then use it in our statement.
+
+Example:-
+int i = 3;
+int a = i++; // a = 3, i = 4
+int b = ++a; // b = 4, a = 4
+.........................................................................................................................................................................................
+
+Q5. In a for loop, and can be statements more complicated than declaring, initializing, and updating a loop-control variable. How can I take advantage of this ability?
+
+
+.......................................................................................................................................................................................
+
+Q6 Can I use a double variable as a loop-control variable in a for loop?
+
+=>It's perfectly fine to do, especially if you want to loop through fractional values or increment by fractional values.
+But For counting loops it is best to use an integer for the loop control variable because floating point numbers are not always exact.
+Your loop might not iterate through the values you expect because of rounding errors. 
+
+.......................................................................................................................................................................................
+
+Q7 . Are there cases where I must use a for loop but not a while, or vice versa?
+
+=>
+All for loops can be written as while loops, and vice-versa. Just use whichever loop seems more appropriate to the task at hand.
+So in programming, the while loop and a for loop can be used interchangeably in some cases.
+ 
+In other cases, it is better to use a while loop, and then again, others, a for loop is better.
+ 
+Usually we'll use the for loop when we know how many time we want to execute the loop.  (for x<=100) whereas we normally will use a while loop when the number of iterations are not known.  (while x>0)
+ 
+Since the for loop provides incremental change of the variable, it is better to use it when "counting"
+ 
+Otherwise, if you want the the condition to just be true or false ex while (true) or while (false)
+its better to use a while loop.
+ If you want the loop to break based on a condition other than the number of times it runs, you should use a while loop.
+
+.........................................................................................................................................................................................
+
+Q8. Write a Java program to sort an array of given integers using the Bubble sorting Algorithm and Heap sort Algorithm.
+
+=>
+BUBBLE SORT:
+
+public class BubbleSort {  
+    static void bubbleSort(int[] arr) {  
+        int n = arr.length;  
+        int temp = 0;  
+         for(int i=0; i < n; i++){  
+                 for(int j=1; j < (n-i); j++){  
+                          if(arr[j-1] > arr[j]){  
+                                 //swap elements  
+                                 temp = arr[j-1];  
+                                 arr[j-1] = arr[j];  
+                                 arr[j] = temp;  
+                         }  
+                          
+                 }  
+         }  
+  
+    }  
+    public static void main(String[] args) { 
+		Scanner sc = new Scanner(System.in); 
+		int n = sc.nextInt();
+                int arr[] = new int[n];
+		for(int i=0;i<n;i++)
+			arr[i] = sc.nextInt();  
+                 
+                System.out.println("Array Before Bubble Sort");  
+                for(int i=0; i < arr.length; i++){  
+                        System.out.print(arr[i] + " ");  
+                }  
+                System.out.println();  
+                  
+                bubbleSort(arr);//sorting array elements using bubble sort  
+                 
+                System.out.println("Array After Bubble Sort");  
+                for(int i=0; i < arr.length; i++){  
+                        System.out.print(arr[i] + " ");  
+                }  
+   
+        }  
+} 
+
+HEAP SORT:
+
+public class HeapSort 
+{ 
+    public void sort(int arr[]) 
+    { 
+        int n = arr.length; 
+  
+        for (int i = n / 2 - 1; i >= 0; i--) 
+            heapify(arr, n, i); 
+
+        for (int i=n-1; i>=0; i--) 
+        { 
+            int temp = arr[0]; 
+            arr[0] = arr[i]; 
+            arr[i] = temp; 
+  
+            heapify(arr, i, 0); 
+        } 
+    } 
+  
+    void heapify(int arr[], int n, int i) 
+    { 
+        int largest = i;  // Initialize largest as root 
+        int l = 2*i + 1;  // left = 2*i + 1 
+        int r = 2*i + 2;  // right = 2*i + 2 
+  
+        // If left child is larger than root 
+        if (l < n && arr[l] > arr[largest]) 
+            largest = l; 
+  
+        // If right child is larger than largest so far 
+        if (r < n && arr[r] > arr[largest]) 
+            largest = r; 
+  
+        // If largest is not root 
+        if (largest != i) 
+        { 
+            int swap = arr[i]; 
+            arr[i] = arr[largest]; 
+            arr[largest] = swap; 
+  
+            // Recursively heapify the affected sub-tree 
+            heapify(arr, n, largest); 
+        } 
+    } 
+  
+    static void printArray(int arr[]) 
+    { 
+        int n = arr.length; 
+        for (int i=0; i<n; ++i) 
+            System.out.print(arr[i]+" "); 
+        System.out.println(); 
+    } 
+  
+    // Driver program 
+    public static void main(String args[]) 
+    { 
+        Scanner sc = new Scanner(System.in); 
+	int n = sc.nextInt();
+        int arr[] = new int[n];
+	for(int i=0;i<n;i++)
+		arr[i] = sc.nextInt(); 
+  
+        HeapSort ob = new HeapSort(); 
+        ob.sort(arr); 
+  
+        System.out.println("Sorted array is"); 
+        printArray(arr); 
+    } 
+}
+
+......................................................................................................................................................................................
+
+Q9. Write a program to find Leap year.
+
+=>
+import java.util.Scanner;
+
+public class Leapyear {
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the year:");
+        int year = sc.nextInt();
+        if((year%4)!=0)
+            System.out.println(" The year is a leap year");
+        else
+            System.out.println(" The year is not a leap year");
+    }
+}
+
+.....................................................................................................................................................................................
+
+Q10. Write a program GreatestCommonDivisor that finds the greatest common divisor (gcd) of two integers using Euclid’s algorithm, which is an iterative computation based on the following observation: if x is greater than y, then if y divides x, the gcd of x and y is y; otherwise, the gcd of x and y is the same as the gcd of x % y and y.
+
+=>
+import java.util.Scanner;
+
+public class Euclid {
+
+    public static int gcd (int a, int b){
+        if(a>b){
+            return gcd ((a-b),b);
+        }
+        else{
+            if(b%a == 0)
+                return a;
+            else
+                return gcd((b%a),a);
+        }
+    }
+
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter two numbers:");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int res = gcd(a, b);
+        System.out.println("Gcd of two numbers is: " + res);
+    }
+}
+
+...................................................................................................................................................................................
+
+Q11.Write a program converting to binary Input - 19 output -10011 Input - 100000000 Output - 101111101011110000100000000
+
+=>
+import java.util.Scanner;
+
+public class Tobinary {
+
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the numbers:");
+        int n = sc.nextInt();
+        int[] arr = new int[99999];
+        int i = 0;
+        while(i>=0){
+            arr[i] = n%2;
+            i++;
+            n = n/2;
+            if(n==1){
+                arr[i]=1;
+                break;
+            }
+        }
+        for(int j=i;j>=0;j--)
+            System.out.print(arr[j]);
+    }
+}
+
+..................................................................................................................................................................................
+
+Q12. Write a program Checkerboard that takes an integer command-line argument n and uses a loop nested within a loop to print out a two-dimensional n-by-n checkerboard pattern with alternating spaces and asterisks.
+
+=>
+import java.util.Scanner;
+
+public class Checkerboard {
+
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the numbers:");
+        int n = sc.nextInt();
+        for(int i=0;i<n;i++){
+            for(int j=i;j<(n+i);j++){
+                if(j%2==0)
+                    System.out.print("*");
+                else
+                    System.out.print(" ");
+            }
+            System.out.println();
+
+        }
+    }
+}
