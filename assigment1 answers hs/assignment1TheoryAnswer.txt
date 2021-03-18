@@ -1,0 +1,60 @@
+Q4.
+The difference between ++i and i++ is that -
+
+++i increments the value first and then return it
+i++ return the value first and then increments it
+for example--
+
+int i = 5;
+int j = ++i;
+System.out.println("i: " + i + " j: " + j);
+
+The output will be:
+i: 6 j: 6
+
+
+int i = 5;
+int j = i++;
+System.out.println("i: " + i + " j: " + j);
+
+They will produce different output.
+The output will be:
+i: 6 j: 5
+
+
+
+Q5.
+We can use the && operator to join two conditions together in the for loop.
+
+for( initialization ; condition1 && condition2 ; increment)
+
+Example:
+for (int i = 1, j = 10; i <= 10 && j > 0; i = i - 1 , j = j-1) {
+     System.out.println("Inside For Loop");
+ }
+
+
+
+Q6.
+yes, you can use a double variable as a loop-control variable in a for loop, especially if you want to loop through fractional 
+values or increment by fractional values.
+But For counting loops it is best to use an integer for the loop control variable because floating point numbers are not always exact.
+Your loop might not iterate through the values you expect because of rounding errors. 
+For example, 0.1 is always slightly wrong when represented using floating point, no matter how many bits are used.
+
+
+
+Q7 .
+No, We can always rewrite a for loop as a while loop, and vice versa.
+
+<init>
+while (condition) {
+...
+<increment>
+}
+
+is equivalent to:
+
+for (<init>; <condition>; <increment>) {
+...
+}
