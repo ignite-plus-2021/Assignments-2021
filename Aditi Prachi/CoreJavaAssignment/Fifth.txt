@@ -1,4 +1,0 @@
-
-Q5. In a for loop, and can be statements more complicated than declaring, initializing, and updating a loop-control variable. How can I take advantage of this ability?
-
-Ans.

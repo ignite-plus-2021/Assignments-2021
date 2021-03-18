@@ -1,8 +1,0 @@
-Q6.Can I use a double variable as a loop-control variable in a for loop?
-
-Ans.
-Yes, a double variable can be used as a loop-control variable in a for loop, especially if we want to loop through fractional 
-values or increment by fractional values.
-But for counting loops it is best to use an integer for the loop control variable because floating point numbers are not always exact.
-The loop might not iterate through the values expected because of rounding errors. 
-For example, 0.1 is always slightly wrong when represented using floating point, no matter how many bits are used.
