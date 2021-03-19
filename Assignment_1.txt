@@ -1,0 +1,294 @@
+Q1
+
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+        if(args[0].equals(args[1]) && args[1].equals(args[2]))
+	System.out.print("equal");
+        else System.out.print("not equal");
+    }
+}
+
+
+
+Q2
+
+package com.company;
+
+        import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int n, count = 0;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number of elements in the array");
+        n = sc.nextInt();
+        int[] array = new int[n];
+        System.out.print("Enter the elements of the array");
+        for (int i = 0; i < n; i++) {
+            array[i] = sc.nextInt();
+            if (array[i] == 0)
+                count++;
+        }
+        for (int i = 0; i < count; i++) {
+            array[i] = 0;
+            System.out.print(array[i] + "\t");
+        }
+        for (int i = count; i < n; i++) {
+            array[i] = 1;
+            System.out.print(array[i] + "\t");
+        }
+    }
+}
+
+
+
+
+Q3
+
+package com.company;
+import java.lang.Math;
+
+public class Main {
+
+    public static void main(String[] args) {
+	System.out.print("n="+args[0]+"\npowers are:");
+	 int n=Integer.valueOf(args[0]);
+	for(int i=1;i<=n;i++)
+    {
+        int a=2;
+        int b=i;
+        System.out.print("\n"+Math.pow(a,b));
+    }
+    }
+}
+
+
+Q4
+
+++i returns the value after it is incremented
+i++ returns the value before it is incremented
+
+
+Q5
+
+Syntax of for loop is
+for(initialization;condition;update variable)
+{
+statements(s);
+}
+The 3 aspects of for loop-
+1.Initialization of loop
+2.testing the ending condition
+3.updating the variable
+are done in 1 statement. This makes it easier to check if things are done correctly.
+
+
+Q6
+
+It can be done.It is especially useful if we want to loop through fractional values or increment by fractional values.
+
+Q7
+Generally a for loop should be used when we know how many times the loop should run.
+If we want the loop to break based on a condition other than the number of times it runs, awhile loop should be used.
+
+
+Q8
+
+
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter the number of array elements");
+        int n=sc.nextInt();
+        int[] array=new int[n];
+        System.out.print("Enter the array elements");
+        for(int i=0;i<n;i++)
+        {
+            array[i]= sc.nextInt();
+        }
+        int temp;
+        for(int i=0;i<n-1;i++)
+        {
+            for(int j=0;j<n-1-i;j++)
+            {
+                if(array[j]>array[j+1])
+                {
+                    temp=array[j];
+                    array[j]=array[j+1];
+                    array[j+1]=temp;
+                }
+            }
+        }
+        for(int i=0;i<n;i++)
+        {
+            System.out.print(array[i]+"\t");
+        }
+
+    }
+}
+
+
+
+Q9
+
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter the year");
+        int n=sc.nextInt();
+            if(n%400==0)
+                System.out.print("Leap year");
+            else if(n%100!=0)
+                System.out.print("Not a leap year");
+            else if(n%4==0)
+                System.out.print("Leap year");
+        else
+            System.out.print("Not a leap year");
+        }
+    }
+
+
+
+Q10
+
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc =new Scanner(System.in);
+        System.out.print("Enter the numbers");
+        int a= sc.nextInt();
+        int b=sc.nextInt();
+        int c=gcd(a,b);
+        System.out.print("GCD of ("+a+","+b+")="+c);
+    }
+    public static int gcd(int a,int b)
+    {
+        if(a==0)
+            return b;
+        return gcd(b%a,a);
+    }
+
+}
+
+
+
+Q11
+
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter the number in decimal");
+        int n=sc.nextInt();
+        int[] array=new int[30];
+        int i=0;
+        while(n>0)
+        {
+            array[i]=n%2;
+            n=n/2;
+            i++;
+        }
+        i--;
+        while(i>=0)
+        {
+            System.out.print(array[i]);
+            i--;
+        }
+
+
+    }
+}
+
+
+
+
+Q12
+
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int n=Integer.valueOf(args[0]);
+        int i=1;
+        while(i<=n)
+        {
+            int j=1;
+            if(i%2==0)
+            {
+                while (j <= n) {
+                    System.out.print(" ");
+                    j++;
+                    System.out.print("*");
+                    j++;
+                }
+            }
+           else
+                {
+                while (j <= n) {
+                    System.out.print("*");
+                    j++;
+                    System.out.print(" ");
+                    j++;
+                }
+            }
+            System.out.print("\n");
+            i++;
+        }
+    }
+}
+
+
+
+Exception handling
+
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        System.out.print("Enter zip code");
+        check();
+    }
+    public static void check () {
+        Scanner scanner = new Scanner(System.in);
+        int pin= scanner.nextInt();
+        try {
+            if(pin == 123 || pin == 456)
+
+        throw new Exception("Delivery not available in your area");
+        else
+        System.out.print("Delivery available in your area");
+    }
+        catch (Exception e)
+        {
+            System.out.print(e);
+        }
+    }
+}
+
+
