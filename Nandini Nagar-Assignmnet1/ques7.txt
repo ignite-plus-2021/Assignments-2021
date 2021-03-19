@@ -1,0 +1,5 @@
+Every for loop can be converted into an equivalent while loop and vice versa.
+Which type of loop is chosen depends upon convenience and readability.
+For loop can be used when we need to iterate over a known range and 
+while loop can be used when we need to iterate till the terminating conditions turns true.
+         
