@@ -1,0 +1,52 @@
+Q5. In a for loop, and can be statements more complicated than declaring, initializing, and updating a loop-control variable. How can I take advantage of this ability?
+
+The for statement provides a compact way to iterate over a range of values.If the number of iteration is fixed, it is recommended to use for loop.
+Syntax of simple for loop :
+for(initialization;termination;increment)
+{
+statements(s);
+}
+
+1.Intialization expression intialize the loop;it is executed onces, as the loop begins
+2.When the termination expression evaluates to false the loop terminates.
+3.The increment expression is invoked after each iteration through the loop.it is perfectly acceptable for this expression to increment or decrement a value.
+
+Example:
+	class ForDemo
+	{
+		public static void main(String[] args)
+		{
+			for(int i=1;i<11;i++){
+				System.out.println("count is:" +i);
+			}
+		}
+	}
+
+apart from this we can use break and continue statement .
+Break statement:
+ this statement is used to jump out of a loop when a certain condition is met.
+ex:The example jumps out of the loop when the value of i is equal to 4.
+    public class Main {
+    public static void main(String[] args) {
+        for (int i = 0; i < 10; i++) {
+            if (i == 4) {
+                break;
+            }
+            System.out.println(i);
+        }
+    }
+    }
+
+continue statement:The continue statement breaks one iteration (in the loop), if a specified condition occurs,
+and continues with the next iteration in the loop.
+ex:This example skips the value of 4.
+    public class Main {
+    public static void main(String[] args) {
+         for (int i = 0; i < 6; i++) {
+            if (i == 4) {
+                continue;
+             }
+           System.out.println(i);
+          }
+    }
+    }

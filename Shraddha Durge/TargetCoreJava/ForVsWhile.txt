@@ -1,0 +1,4 @@
+Q7 . Are there cases where I must use a for loop but not a while, or vice versa?
+If the range over which you must iterate is known, use a for loop. Situations like this include: all the items in an array, or all the items in a collection using an iterator. If you know the number of things, or how to stop after the last thing, chances are a for loop will express this more clearly and concisely.
+
+On the other hand if you need the loop to run until some condition, and you don't know how many iterations that will be until that condition occurs, then you probably need a while loop.
