@@ -1,0 +1,27 @@
+Q7 . Are there cases where I must use a for loop but not a while, or vice versa?
+
+answer:
+Every for loop can be written as a while loop and vice versa so there are no cases where it is a must to use only a
+for loop and not a while loop or vice versa.
+
+for loop is used when we know exactly how the loop will work and the number of iterations whereas,
+while loop is used when the the condition of execution is known but not the number of iterations.
+
+example:
+public class question7 {
+    public static void main(String args[]){
+          int[] num = new int[]{1, 2, 3, 4};
+        //printing the elements with for loop
+        for(int i=0;i<4;i++)
+        {
+        System.out.println(num[i]);
+        }
+
+        //printing the elements with while loop
+        int j=0;
+        while(j<4){
+            System.out.println(num[j]);
+            j++;
+        }
+    }
+}

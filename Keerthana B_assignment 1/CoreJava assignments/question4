@@ -1,0 +1,11 @@
+Q. What is the difference between ++i and i++?
+
+answer:
+Both increment the value of variable i by 1. But, ++i is pre-increment whereas i++ is post-increment. This means that,
+pre-increment(++i) - increments the value of i first and then uses it in execution
+post-increment(i++) - uses the existing value of i first and then increments the value of i by 1 for next use.
+
+example:
+int num = 5;
+int a = num++; // a = 5, num = 6
+int b = ++a; // b = 7, a = 7
