@@ -1,0 +1,9 @@
+Q.In a for loop, and can be statements more complicated than declaring,
+initializing, and updating a loop-control variable. How can I take advantage of this ability?
+
+answer:
+the syntax for a for loop is given as,
+for ( variable initialization; condition; variable update )
+    {
+     block of statements
+     }

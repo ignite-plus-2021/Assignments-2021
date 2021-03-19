@@ -1,0 +1,15 @@
+Q6 Can I use a double variable as a loop-control variable in a for loop?
+
+answer:
+Yes, a double variable can be used as a loop-control variable in a for loop, usually used if we want to loop
+through fractional values or increment by fractional values.
+
+example:
+public class question6 {
+    public static void main(String[] args){
+        for(double num=0; num<5; num=num+0.115 ){
+            //increment by fractional value
+            System.out.println(num);
+        }
+    }
+}
