@@ -1,0 +1,6 @@
+The for loop in Java can have three statements:
+1. Initialization
+2. Test expression
+3. Updation 
+If all three statements are skipped then it becomes an infinite loop running endlessly as shown
+for(; ;)

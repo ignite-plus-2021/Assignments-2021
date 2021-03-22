@@ -1,0 +1,12 @@
+i++ is called the post increment operator where the value of variable i is used first and then incremented 
+by 1
+Eg: If i=7 
+	a=i++ will assign the value as 7 to a
+
+++i is called as the pre increment operator where the value of variable i is incremented by one first and then 
+used in the expression 
+
+Eg: If i=7
+	a=++i will assign the value as 8 to a
+
+Both the operators are unary operators that is operate on a single operand.

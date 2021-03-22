@@ -1,0 +1,20 @@
+Yes double values can be used in for loops.
+It is mainly used in case where there is requirement of incrementing the loop variable by fraction and not 
+by whole numbers.
+
+For instance, consider
+public class que6
+{
+    public static void main(String args[])
+    {
+        for(double i=1.2;i<3.4;i=i+0.5)
+            System.out.println(i);
+    }
+}
+
+would produce the output as:
+1.2
+1.7
+2.2
+2.7
+3.2

@@ -1,0 +1,13 @@
+All for loops can be converted to while loops and vice versa.
+Both for loop and while loop are entry controlled loops which means the test expressions are validated first 
+and then if it validates to true only the body of the loop gets executed.
+Eg: Consider the for loop as shown:
+for(int i=0;i<5;i++)
+	System.out.println(i);
+is equiuvalent to the while loop shown below:
+int i=0;
+while(i<5)
+{	
+	System.out.println(i);
+	i++;
+}
