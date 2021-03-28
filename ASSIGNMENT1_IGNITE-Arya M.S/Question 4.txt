@@ -1,0 +1,2 @@
+We use post-increment ( i++ ) when we want to use the current value and then we want to increment the value by 1.
+We use pre-increment ( ++i ) when  we want to increment the value by 1 and then use this incremented value.

@@ -1,0 +1,3 @@
+Yes,we can use a double variable as a loop control variable.This helps in loop through fractional value or to increment through fractional value
+    
+        But we cannot compare  it with  == for the condition to  end the loop because due to the  precision error  they  may result in infinite loop.

@@ -1,0 +1,5 @@
+A for loop have the syntax
+   for(initialization;condition checking;increment/decrement){
+   
+   }
+   In the condition checking part , we can join two condition using && operator so that the loop will run only if the both condition is satisfied.
