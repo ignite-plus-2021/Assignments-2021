@@ -1,0 +1,5 @@
+Q7: Are there cases where I must use a for loop but not a while, or vice versa?
+
+Ans: All for loops can be written as while loops, and vice-versa.
+For loop should be used to iterate over an array or when the number of times a loop is to be executed is known. 
+While loop should be used to repeat a section of code an unknown number of times until the specified condition is met.
