@@ -1,0 +1,4 @@
+Q7. Are there cases where I must use a for loop but not a while, or vice versa?
+Ans. All for loops can be written as while loops and vice versa. 
+We use for loops when we know the number of times we have to execute our loop. 
+And use while loop to execute statements until a specific condition is met.
