@@ -1,0 +1,67 @@
+Q4. What is the difference between ++i and i++
+A. ++i is the pre-increment where the value of i is first incremented and then used in the expression where as i++ is called the post-increment where the value of i is used in the expression and then incremented.
+Ex: a = (++i) + (++i); //pre increment
+     Here if i=1 initially then two increments gives the value of i as 3 and value of a as 5 (first ++i=2 + later ++i=3)
+Ex: a = (i++)+(i++);// post increment	
+     Here if i=1 initially then two post increments give the value of i as 3 and value of a as 3(first i++=1 i=2; later i++=2, i=3)
+
+
+***********************************************************
+
+
+Q5. In a for loop, and can be statements more complicated than declaring, initializing, and updating a loop-control variable. How can I take advantage of this ability?
+A. The general form of for loop is:
+	for (initialization ; condition ; updation)
+	{
+		//statements; execute until condition becomes false
+	}
+•	Apart from this general form we can have two variables initialized in intialization part seperated by a comma.
+•	Two or condition may be included by or-ing (||) or and-ing (&&) them. When or-ed condition fails if both are false, true otherwise; when and-ed then condition if anyone of them is false.
+      for (i=1,j=1; cond1&&cond2 ; updating)
+      {
+	//statements;
+      }
+•	The three expressions for for-loop are optional; an infinite loop can be created as follows. 
+//infinite loop
+for ( 		;	;	)
+{
+	Statements;
+}
+•	The for also another form which was designed for iteration through Collections and arrays.
+// Enhanced for
+int numbers[] ={1,2,3,4,5,6};
+for (int item : numbers) 
+{ 
+	System.out.println (item+”  “);
+}
+•	Each time variable item holds the current value from the numbers array.
+
+******************************************************
+
+
+Q6 .Can I use a double variable as a loop-control variable in a for loop?
+A. Yes,you can use double variable as a loop-control variable in such a case you separate them with comma and make sure to update two variables if not done so can lead to infinite iterations in some cases.
+Ex: for (i=0,j=10;i<5,j>0;i++,j--)
+      {
+		System.out.println (i+” “+j);
+       }
+       Prints 0 10
+1	9
+2	8
+3	7
+4	6
+
+
+**********************************************
+
+Q7 . Are there cases where I must use a for loop but not a while, or vice versa?
+A.	If we aren’t aware of the number of times the loop has to iterate but only if the condition is known, we can use a while loop instead of for. 
+B.	If u don’t want to specify any condition and want the loop to iterate infinitely then you can use for loop but if you don’t include a Boolean value of expression in a while loop it results in compilation error.
+C.	If u don’t want to increment the loop control variable with every iteration then you can use while loop instead of a for.
+D.	However if want to execute the loop in less time then you can use while rather than for, because while is slightly faster. If  a program has large number of loops included to decrease the overhead use while.
+
+
+********************************************
+ 
+
+
