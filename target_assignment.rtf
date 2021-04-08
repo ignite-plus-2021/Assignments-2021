@@ -1,0 +1,306 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang16393{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 Q1. Write a program that takes three integer command-line arguments and prints equal if all three are equal, and not equal otherwise.\par
+\par
+Q2. Write a Java program to sort a given binary array in linear times. b_nums[] = \{ 0, 1, 1, 0, 1, 1, 0, 1, 0, 0 \} Output: After sorting: [0, 0, 0, 0, 0, 1, 1, 1, 1, 1]\par
+\par
+Q3. Write a program that takes an integer command-line argument n and prints all the positive powers of 2 less than or equal to n. Make sure that your program works properly for all values of n.\par
+\par
+Q4. What is the difference between ++i and i++\par
+\par
+Q5. In a for loop, and can be statements more complicated than declaring, initializing, and updating a loop-control variable. How can I take advantage of this ability?\par
+\par
+Q6 Can I use a double variable as a loop-control variable in a for loop?\par
+\par
+Q7 . Are there cases where I must use a for loop but not a while, or vice versa?\par
+\par
+Q8. Write a Java program to sort an array of given integers using the Bubble sorting Algorithm and Heap sort Algorithm.\par
+\par
+Q9. Write a program to find Leap year\par
+\par
+Q10. Write a program GreatestCommonDivisor that finds the greatest common divisor (gcd) of two integers using Euclid\rquote s algorithm, which is an iterative computation based on the following observation: if x is greater than y, then if y divides x, the gcd of x and y is y; otherwise, the gcd of x and y is the same as the gcd of x % y and y.\par
+\par
+Q11.Write a program converting to binary Input - 19 output -10011 Input - 100000000 Output - 101111101011110000100000000\par
+\par
+Q12. Write a program Checkerboard that takes an integer command-line argument n and uses a loop nested within a loop to print out a two-dimensional n-by-n checkerboard pattern with alternating spaces and asterisks.\par
+\par
+\par
+1) \par
+import java.util.*;\par
+\par
+public class First \{\par
+    public static void main(String[] args) \{\par
+        int a,b,c;\par
+        Scanner sc = new Scanner(System.in);\par
+        System.out.println("Enter three numbers");\par
+        a = sc.nextInt();\par
+        b = sc.nextInt();\par
+        c = sc.nextInt();\par
+        if((a==b)&&(a==c))\{\par
+            System.out.println("Equal");\par
+        \}\par
+        else\{\par
+            System.out.println("Not equal");\par
+        \}\par
+    \}\par
+\}\par
+2)\par
+import java.util.*;\par
+\par
+public class Second \{\par
+    public static void main(String[] args) \{\par
+        int i, j = -1;\par
+        Scanner sc = new Scanner(System.in);\par
+        System.out.println("Enter the number of elements:");\par
+        int n = sc.nextInt();\par
+        int b_num[] = new int[n];\par
+        System.out.println("Enter the elements:");\par
+        for (i = 0; i < n; i++) \{\par
+            b_num[i] = sc.nextInt();\par
+        \}\par
+        for (i = 0; i < n; i++) \{\par
+            if (b_num[i] == 0) \{\par
+                j++;\par
+                int temp = b_num[i];\par
+                b_num[i] = b_num[j];\par
+                b_num[j] = temp;\par
+            \}\par
+        \}\par
+        for (i = 0; i < n; i++) \{\par
+            System.out.print(b_num[i] + " ");\par
+        \}\par
+    \}\par
+\}\par
+\par
+3)\par
+import java.util.*;\par
+\par
+public class Third \{\par
+    public static void main(String[] args) \{\par
+        Scanner sc = new Scanner(System.in);\par
+        System.out.println("Enter the number:");\par
+        int n = sc.nextInt() ;\par
+        int i =0;\par
+        while(((int)Math.pow(2,i))<n)\{\par
+            System.out.print((int)(Math.pow(2,i))+" ");\par
+            i++;\par
+        \}\par
+    \}\par
+\}\par
+\par
+4)\par
+Both ++i and i++ increment the value of i by 1 but in a different way. If ++ precedes the variable, it is called pre-increment operator and it comes after a variable, it is called post-increment operator.\par
+Increment in java is performed in two ways:\par
+*Post-Increment (i++): we use i++ in our statement if we want to use the current value, and then we want to increment the value of i by 1.\par
+*Pre-Increment(++i): We use ++i in our statement if we want to increment the value of i by 1 and then use it in our statement.\par
+\par
+Example:-\par
+int i = 1;\par
+int a = i++; // a = 1, i = 2\par
+int b = ++a; // b = 3, a = 3\par
+\par
+5)\par
+Break and Continue.\par
+Break statement is used to come out of the loop on a particular condition and executes the program followed by the loop.\par
+Continue is used to start the functioning of loop in the next iteration skipping the statements written after continue.\par
+6)\par
+Yes, a double variable can be used as a loop-control variable in a for loop, especially if we want to loop through fractional \par
+values or increment by fractional values.\par
+But for counting loops it is best to use an integer for the loop control variable because floating point numbers are not always exact.\par
+The loop might not iterate through the values expected because of rounding errors. \par
+For example, 0.1 is always slightly wrong when represented using floating point, no matter how many bits are used.\par
+\par
+7)\par
+All for loops can be written as while loops, and vice-versa. Just use whichever loop seems more appropriate to the task at hand.\par
+So in programming, the while loop and a for loop can be used interchangeably in some cases.\par
+In other cases, it is better to use a while loop, and then again, others, a for loop is better.\par
+Usually we'll use the for loop when we know how many time we want to execute the loop.  (for x<=100) whereas we normally will use a while loop when the number of iterations are not known.  \par
+(while x>0) \par
+Since the for loop provides incremental change of the variable, it is better to use it when "counting"\par
+Otherwise, if we want the the condition to just be true or false example while (true) or while (false)\par
+its better to use a while loop.\par
+When we want the loop to break based on a condition other than the number of times it runs, we should use a while loop.\par
+8)\par
+import java.util.*;\par
+public class BubbleSort \{\par
+    static void bubbleSort(int[] arr,int n) \{\par
+        for(int i=0; i < n-1; i++)\{\par
+            int flag = 0;\par
+            for(int j=0; j < n-i-1; j++)\{\par
+                if(arr[j] > arr[j+1])\{\par
+                    int temp = arr[j];\par
+                    arr[j] = arr[j+1];\par
+                    arr[j+1] = temp;\par
+                    flag = 1;\par
+                \}\par
+            \}\par
+            if(flag==0)\{\par
+                break;\par
+            \}\par
+        \}\par
+    \}\par
+    public static void main(String[] args) \{\par
+        Scanner sc = new Scanner(System.in);\par
+        System.out.println("Enter thr number of  elements:");\par
+        int n = sc.nextInt();\par
+        int[] arr = new int[n];\par
+        System.out.println("Enter the array elements:");\par
+        for(int i=0;i<n;i++)\par
+            arr[i] = sc.nextInt();\par
+        System.out.println("Array Before Sorting");\par
+        for (int i : arr) \{\par
+            System.out.print(i + " ");\par
+        \}\par
+        System.out.println();\par
+        bubbleSort(arr,n);\par
+        System.out.println("Array After Sorting");\par
+        for (int i : arr) \{\par
+            System.out.print(i + " ");\par
+        \}\par
+    \}\par
+\}\par
+\par
+import java.util.*;\par
+\par
+public class HeapSort \{\par
+    static void sort(int[] arr)\par
+    \{\par
+        int n = arr.length;\par
+        for (int i = n / 2 - 1; i >= 0; i--)\par
+            heapify(arr, n, i);\par
+        for (int i=n-1; i>=0; i--)\par
+        \{\par
+            int temp = arr[0];\par
+            arr[0] = arr[i];\par
+            arr[i] = temp;\par
+            heapify(arr, i, 0);\par
+        \}\par
+    \}\par
+    static void heapify(int[] arr, int n, int i)\par
+    \{\par
+        int largest = i;\par
+        int l = 2*i + 1;\par
+        int r = 2*i + 2;\par
+        if (l < n && arr[l] > arr[largest])\par
+            largest = l;\par
+        if (r < n && arr[r] > arr[largest])\par
+            largest = r;\par
+        if (largest != i)\par
+        \{\par
+            int swap = arr[i];\par
+            arr[i] = arr[largest];\par
+            arr[largest] = swap;\par
+            heapify(arr, n, largest);\par
+        \}\par
+    \}\par
+    static void printArray(int[] arr)\par
+    \{\par
+        for (int i : arr) System.out.print(i + " ");\par
+        System.out.println();\par
+    \}\par
+    public static void main(String[] args)\par
+    \{\par
+        Scanner sc = new Scanner(System.in);\par
+        System.out.println("Enter the number of elements");\par
+        int  n = sc.nextInt();\par
+        int[] arr = new int[n];\par
+        System.out.println("Enter the elements");\par
+        for(int i=0;i<n;i++)\{\par
+            arr[i]=sc.nextInt();\par
+        \}\par
+        sort(arr);\par
+        System.out.println("Sorted array is");\par
+        printArray(arr);\par
+    \}\par
+\}\par
+\par
+9)\par
+import java.util.*;\par
+\par
+public class Ninth \{\par
+    public static void main(String[] args) \{\par
+        Scanner sc = new Scanner(System.in);\par
+        System.out.println("Enter the year:");\par
+        int year= sc.nextInt() ;\par
+        int leap = 0;\par
+        if (year % 4 == 0) \{\par
+            if (year % 100 == 0) \{\par
+                if (year % 400 == 0)\par
+                    leap = 1;\par
+            \}\par
+            else\par
+                leap = 1;\par
+        \}\par
+        if (leap==1) \{\par
+            System.out.println("Leap year");\par
+        \}\par
+        else \{\par
+            System.out.println("Not a leap year");\par
+        \}\par
+    \}\par
+\}\par
+\par
+10)\par
+import java.util.*;\par
+\par
+public class Tenth \{\par
+    public static int GreatestCommonDivisor(int a, int b)\{\par
+        if (a == 0)\par
+            return b;\par
+        return GreatestCommonDivisor(b%a, a);\par
+    \}\par
+\par
+    public static void main(String[] args) \{\par
+        Scanner sc = new Scanner(System.in);\par
+        System.out.println("Enter the numbers:");\par
+        int a = sc.nextInt();\par
+        int b = sc.nextInt();\par
+        int g = GreatestCommonDivisor(a,b);\par
+        System.out.println(g);\par
+    \}\par
+\}\par
+11)\par
+import java.util.*;\par
+\par
+public class Eleventh \{\par
+    public static void main(String[] args) \{\par
+        Scanner sc = new Scanner(System.in);\par
+        System.out.println("Enter the decimal number:");\par
+        int n = sc.nextInt();\par
+        int[] binaryNum = new int[1000];\par
+        int i = 0;\par
+        while (n > 0)\par
+        \{\par
+            binaryNum[i] = n % 2;\par
+            n = n / 2;\par
+            i++;\par
+        \}\par
+        for (int j = i - 1; j >= 0; j--)\par
+            System.out.print(binaryNum[j]);\par
+    \}\par
+\}\par
+12)\par
+import java.util.*;\par
+\par
+public class Twelfth \{\par
+    public static void main(String[] args) \{\par
+        Scanner sc = new Scanner(System.in);\par
+        System.out.println("Enter the number:");\par
+        int n = sc.nextInt();\par
+        for (int i=0;i<n;i++)\{\par
+            for (int j=0;j<n;j++)\{\par
+                if((i+j) % 2 != 0)\{\par
+                    System.out.print("*");\par
+                \}\par
+                else\{\par
+                    System.out.print(" ");\par
+                \}\par
+            \}\par
+            System.out.println();\par
+        \}\par
+    \}\par
+\}\par
+\par
+\par
+}
+ 
