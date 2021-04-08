@@ -1,0 +1,277 @@
+1) 
+import java.util.*;
+
+public class First {
+    public static void main(String[] args) {
+        int a,b,c;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter three numbers");
+        a = sc.nextInt();
+        b = sc.nextInt();
+        c = sc.nextInt();
+        if((a==b)&&(a==c)){
+            System.out.println("Equal");
+        }
+        else{
+            System.out.println("Not equal");
+        }
+    }
+}
+2)
+import java.util.*;
+
+public class Second {
+    public static void main(String[] args) {
+        int i, j = -1;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of elements:");
+        int n = sc.nextInt();
+        int b_num[] = new int[n];
+        System.out.println("Enter the elements:");
+        for (i = 0; i < n; i++) {
+            b_num[i] = sc.nextInt();
+        }
+        for (i = 0; i < n; i++) {
+            if (b_num[i] == 0) {
+                j++;
+                int temp = b_num[i];
+                b_num[i] = b_num[j];
+                b_num[j] = temp;
+            }
+        }
+        for (i = 0; i < n; i++) {
+            System.out.print(b_num[i] + " ");
+        }
+    }
+}
+
+3)
+import java.util.*;
+
+public class Third {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number:");
+        int n = sc.nextInt() ;
+        int i =0;
+        while(((int)Math.pow(2,i))<n){
+            System.out.print((int)(Math.pow(2,i))+" ");
+            i++;
+        }
+    }
+}
+
+4)
+Both ++i and i++ increment the value of i by 1 but in a different way. If ++ precedes the variable, it is called pre-increment operator and it comes after a variable, it is called post-increment operator.
+Increment in java is performed in two ways:
+*Post-Increment (i++): we use i++ in our statement if we want to use the current value, and then we want to increment the value of i by 1.
+*Pre-Increment(++i): We use ++i in our statement if we want to increment the value of i by 1 and then use it in our statement.
+
+Example:-
+int i = 1;
+int a = i++; // a = 1, i = 2
+int b = ++a; // b = 3, a = 3
+
+5)
+Break and Continue.
+Break statement is used to come out of the loop on a particular condition and executes the program followed by the loop.
+Continue is used to start the functioning of loop in the next iteration skipping the statements written after continue.
+6)
+Yes, a double variable can be used as a loop-control variable in a for loop, especially if we want to loop through fractional 
+values or increment by fractional values.
+But for counting loops it is best to use an integer for the loop control variable because floating point numbers are not always exact.
+The loop might not iterate through the values expected because of rounding errors. 
+For example, 0.1 is always slightly wrong when represented using floating point, no matter how many bits are used.
+
+7)
+All for loops can be written as while loops, and vice-versa. Just use whichever loop seems more appropriate to the task at hand.
+So in programming, the while loop and a for loop can be used interchangeably in some cases.
+In other cases, it is better to use a while loop, and then again, others, a for loop is better.
+Usually we'll use the for loop when we know how many time we want to execute the loop.  (for x<=100) whereas we normally will use a while loop when the number of iterations are not known.  
+(while x>0) 
+Since the for loop provides incremental change of the variable, it is better to use it when "counting"
+Otherwise, if we want the the condition to just be true or false example while (true) or while (false)
+its better to use a while loop.
+When we want the loop to break based on a condition other than the number of times it runs, we should use a while loop.
+8)
+import java.util.*;
+public class BubbleSort {
+    static void bubbleSort(int[] arr,int n) {
+        for(int i=0; i < n-1; i++){
+            int flag = 0;
+            for(int j=0; j < n-i-1; j++){
+                if(arr[j] > arr[j+1]){
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                    flag = 1;
+                }
+            }
+            if(flag==0){
+                break;
+            }
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter thr number of  elements:");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        System.out.println("Enter the array elements:");
+        for(int i=0;i<n;i++)
+            arr[i] = sc.nextInt();
+        System.out.println("Array Before Sorting");
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+        bubbleSort(arr,n);
+        System.out.println("Array After Sorting");
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
+    }
+}
+
+import java.util.*;
+
+public class HeapSort {
+    static void sort(int[] arr)
+    {
+        int n = arr.length;
+        for (int i = n / 2 - 1; i >= 0; i--)
+            heapify(arr, n, i);
+        for (int i=n-1; i>=0; i--)
+        {
+            int temp = arr[0];
+            arr[0] = arr[i];
+            arr[i] = temp;
+            heapify(arr, i, 0);
+        }
+    }
+    static void heapify(int[] arr, int n, int i)
+    {
+        int largest = i;
+        int l = 2*i + 1;
+        int r = 2*i + 2;
+        if (l < n && arr[l] > arr[largest])
+            largest = l;
+        if (r < n && arr[r] > arr[largest])
+            largest = r;
+        if (largest != i)
+        {
+            int swap = arr[i];
+            arr[i] = arr[largest];
+            arr[largest] = swap;
+            heapify(arr, n, largest);
+        }
+    }
+    static void printArray(int[] arr)
+    {
+        for (int i : arr) System.out.print(i + " ");
+        System.out.println();
+    }
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of elements");
+        int  n = sc.nextInt();
+        int[] arr = new int[n];
+        System.out.println("Enter the elements");
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        sort(arr);
+        System.out.println("Sorted array is");
+        printArray(arr);
+    }
+}
+
+9)
+import java.util.*;
+
+public class Ninth {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the year:");
+        int year= sc.nextInt() ;
+        int leap = 0;
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 400 == 0)
+                    leap = 1;
+            }
+            else
+                leap = 1;
+        }
+        if (leap==1) {
+            System.out.println("Leap year");
+        }
+        else {
+            System.out.println("Not a leap year");
+        }
+    }
+}
+
+10)
+import java.util.*;
+
+public class Tenth {
+    public static int GreatestCommonDivisor(int a, int b){
+        if (a == 0)
+            return b;
+        return GreatestCommonDivisor(b%a, a);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the numbers:");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int g = GreatestCommonDivisor(a,b);
+        System.out.println(g);
+    }
+}
+11)
+import java.util.*;
+
+public class Eleventh {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the decimal number:");
+        int n = sc.nextInt();
+        int[] binaryNum = new int[1000];
+        int i = 0;
+        while (n > 0)
+        {
+            binaryNum[i] = n % 2;
+            n = n / 2;
+            i++;
+        }
+        for (int j = i - 1; j >= 0; j--)
+            System.out.print(binaryNum[j]);
+    }
+}
+12)
+import java.util.*;
+
+public class Twelfth {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number:");
+        int n = sc.nextInt();
+        for (int i=0;i<n;i++){
+            for (int j=0;j<n;j++){
+                if((i+j) % 2 != 0){
+                    System.out.print("*");
+                }
+                else{
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+
