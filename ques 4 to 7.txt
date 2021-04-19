@@ -1,0 +1,24 @@
+Q.4 What is the difference between ++i and i++?
+++i and i++ both increment the value of i by 1 but in a different way. If ++ precedes the variable, it is called pre-increment operator and it comes after a variable, it is called post-increment operator.
+Increment in java is performed in two ways,
+1) Post-Increment (i++): we use i++ in our statement if we want to use the current value, and then we want to increment the value of i by 1.
+2) Pre-Increment(++i): We use ++i in our statement if we want to increment the value of i by 1 and then use it in our statement.
+Q.5 In a for loop, and can be statements more complicated than declaring, initializing, and updating a loop-control variable. How can I take advantage of this ability?
+Using enhanced loops in java
+boolean printing = false; 
+for (int n : a) { 
+if (n == 10) 
+printing = true; 
+if (printing) 
+System.out.println(n); 
+if (n == 20) break; 
+}
+
+Q.6 Can I use a double variable as a loop-control variable in a for loop?
+It is alright to use a double variable as a loop control variable in a for loop. But at most times it can result in erroneous code as for-loop variables because of subtleties in arithmetic and comparison. Your loop might not iterate through the values you expect because of rounding errors. An out-by-one error is likely.
+
+Q.7 Are there cases where I must use a for loop but not a while, or vice versa?
+for-loops are usually used for iterating through some memory segment or data structure. This is because for loops use a thing called an iterator to pass through the data at a given step. An iterator can be predefined (like the vector iterator in STL), user defined, or even a primitive value, like an int or a size_t.
+while-loops, on the other hand, are usually used when we need to do a set of operations until a certain condition is met. For example, a chat server may use a while loop to wait for incoming connections from clients.
+If the range over which you must iterate is known, use a for loop.
+
