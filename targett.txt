@@ -1,0 +1,76 @@
+Q4.What is the difference between ++i and i++
+++i increments before assigment
+i++ increments after assignment
+i=10
+p=++i
+System.out.println(p) //11
+--------------------------------------
+p=i++
+System.out.println(p) //10
+
+
+Q5. In a for loop, and can be statements more complicated than declaring, initializing, and updating a loop-control variable. How can I take advantage of this ability?
+
+The for statement provides a compact way to iterate over a range of values.If the number of iteration is fixed, it is recommended to use for loop.
+Syntax of simple for loop :
+for(initialization;termination;increment)
+{
+statements(s);
+}
+
+1.Intialization expression intialize the loop;it is executed onces, as the loop begins
+2.When the termination expression evaluates to false the loop terminates.
+3.The increment expression is invoked after each iteration through the loop.it is perfectly acceptable for this expression to increment or decrement a value.
+
+Example:
+	class ForDemo
+	{
+		public static void main(String[] args)
+		{
+			for(int i=1;i<11;i++){
+				System.out.println("count is:" +i);
+			}
+		}
+	}
+
+we can also add complexity by diving conditions insode for loop.
+either if..else,break,continue,while 
+Break statement:
+ this statement is used to jump out of a loop when a certain condition is met.
+ex:The example jumps out of the loop when the value of i is equal to 4.
+    public class Main {
+    public static void main(String[] args) {
+        for (int i = 0; i < 10; i++) {
+            if (i == 3) {
+                break;
+            }
+            System.out.println(i);
+        }
+    }
+    }
+
+continue statement:The continue statement breaks one iteration (in the loop), if a specified condition occurs,
+and continues with the next iteration in the loop.
+ex:This example skips the value of 4.
+    public class Main {
+    public static void main(String[] args) {
+         for (int i = 0; i < 6; i++) {
+            if (i==3) {
+                continue;
+             }
+           System.out.println(i);
+          }
+    }
+    }
+Q6.Can I use a double variable as a loop-control variable in a for loop?
+Yes.
+for(int i=0,j=n-1;i<n&&j>=0;j--,i++){
+//conditions;
+if(a[i]>a[j])
+swap(a[i],a[j])
+}
+here i&j are used as 2 looping variables.both of them play role in controlling the condition as well updation.
+
+Q7.Are there cases where I must use a for loop but not a while, or vice versa?
+for loop is used when exact condition when loop will end is known or number of iterations are known
+while can be used when you know condition but not exact no of iterations
