@@ -1,0 +1,36 @@
+4.
+
+//++i and i++
+* Post-Increment (i++): 
+We use i++ in our statement if we want to use the current value, and then we want to increment the value of i by 1.
+
+* Pre-Increment(++i): 
+We use ++i in our statement if we want to increment the value of i by 1 and then use it in our statement.
+
+
+5.
+
+We can use the && operator to join two conditions together in the for loop.
+
+for( initialization ; condition1 && condition2 ; increment)
+
+Example:
+for (int i = 1, j = 10; i <= 10 && j > 0; i = i + 1 , j = j-1) {
+     System.out.println("Inside For Loop");
+}
+
+
+6.
+
+//Double as loop variable
+We can use double as loop variable if we want to loop through fractional values or increment by fractional values.
+
+But we can't compare with == for the condition to end the loop. 
+Due to precision errors, this can easily result in an infinite loop in spite of the best intentions.
+
+
+7.
+
+All for loops can be written as while loops, and vice-versa.
+In general, you should use a for loop when you know how many times the loop should run. 
+If you want the loop to break based on a condition other than the number of times it runs, you should use a while loop.
