@@ -1,0 +1,4 @@
+It's absolutely correct to do, especially if you want to loop through fractional values or increment by fractional values.
+
+But for certain conditions, which is that if we employ this technique, do not compare with == for the condition to end the loop. Due to precision errors, this can easily result in an infinite loop in spite of the best intentions. That's why we always uses <=.
+
