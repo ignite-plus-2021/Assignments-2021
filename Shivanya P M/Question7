@@ -1,0 +1,8 @@
+Every for loops can be replaced by while loops,
+and vice-versa. It depends upon which one is appropriate to the task.
+
+In general, you should use a for loop when you know
+how many times the loop should run.
+If you want the loop to break based on a condition
+other than the number of times it runs,
+you should use a while loop.

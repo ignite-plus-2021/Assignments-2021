@@ -1,0 +1,10 @@
+    We can use double variable as a loop control variable especially if you want to loop through fractional values or increment by fractional values.
+    For Example:
+
+    double dx = (to - from) / (n-1);
+
+for (double x = from; x <= to; x += dx)
+    {
+        double y = (Double) f.invoke(null, x);
+        System.out.printf(%10.4f |  %10.4f%n" + y, x, y);
+  }
