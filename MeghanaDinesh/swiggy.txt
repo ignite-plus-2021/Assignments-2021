@@ -1,0 +1,35 @@
+package com.practice;
+import java.lang.*;
+import java.util.*;
+ class ZipcodeException extends Exception{
+
+}
+public class Swiggy
+{
+    public static void validity(String zip) throws ZipcodeException {
+        String regex = "^[0-9]{5}(-[0-9]{4})?";
+        if (zip.matches(regex))
+            System.out.println("Delivery available in your area!");
+        else {
+            throw new ZipcodeException();
+        }
+    }
+
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the zipcode:");
+        String zipcode = sc.next();
+        try
+        {
+            validity(zipcode);
+        }
+        catch(ZipcodeException e)
+        {
+            System.out.println("Delivery not  available in your area!");
+         }
+
+    }
+
+
+}
