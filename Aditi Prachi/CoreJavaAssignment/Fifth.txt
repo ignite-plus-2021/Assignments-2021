@@ -1,4 +1,16 @@
 
 Q5. In a for loop, and can be statements more complicated than declaring, initializing, and updating a loop-control variable. How can I take advantage of this ability?
 
-Ans.
+Ans.The formal syntax of the for statement is as follows:
+for ( initialization; continuation-condition; update ){
+     	statement or statements
+}
+
+If there are no values given for initialization, condition and update then the loop will be infinte
+for(; ; )
+
+We can combine conditions using && operator this will get executed till both the conditions are true.
+For example:
+for (int i = 1, j = 5; i <= 5 && j > 0; i = i - 1 , j = j-1) {
+     System.out.println("Statement from Loop");
+}
