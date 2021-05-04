@@ -1,0 +1,71 @@
+
+                ASSIGNMENT 1  
+             Exception handling
+
+            Vaishnavi Battalwar
+
+                         
+Use case – Check Swiggy delivery to your area.
+
+• Develop a method that accepts a zip code and validates against non-deliverable zip codes.
+
+• Example – zip codes 123, 456, 789 are non-deliverable.
+
+• If the customer resides at a non-deliverable zip code, throw a custom exception.
+
+• Handle the exception and display an appropriate message to the customer.
+
+• If the customer resides at a deliverable zip code, display a message “Delivery available in your area! “.
+
+• Invoke this method from public static void main(String[] args) which takes the zip code as an input parameter.
+
+
+====>
+
+import java.util.*;
+
+
+class InvalidZipCodeException extends Exception
+{
+    InvalidZipCodeException(String str)
+    {
+        super(str);
+    }
+}
+
+
+public class SwiggyExceptionHandling 
+{
+    static void validateZip(int zipcode)throws InvalidZipCodeException
+    {
+        if(zipcode==123 || zipcode==456 || zipcode==789)
+	{
+            throw new InvalidZipCodeException(" SORRY , Delivery is not available in your area! ");
+	}
+        else
+	{
+            System.out.println(" Delivery is available in your area! ");
+	}
+    }
+
+
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int zipcode;
+
+        System.out.println("Enter the zip code ");
+        zipcode = sc.nextInt();
+
+        try
+	{
+            validateZip(zipcode);
+        }
+	catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }
+}
+
+

@@ -1,0 +1,317 @@
+
+
+
+                              Assignment 1 
+			  Vaishnavi Battalwar
+
+
+Q1)   
+  
+public class ArgumentsComparision 
+{
+
+    public static void main(String[] args) 
+    {
+                                  // inputs are in the command line arguments
+
+        int arg1 = Integer.parseInt(args[0]);
+        int arg2 = Integer.parseInt(args[1]);
+        int arg3 = Integer.parseInt(args[2]);
+
+        if( (arg1 == arg2) && (arg1 == arg3))
+            System.out.println("EQUAL");
+        else
+            System.out.println("NOT EQUAL");
+    }
+
+}
+
+Q2) sort a given binary array in linear times 
+
+public class binaryArraySorting 
+{
+
+    public static void main(String[] args) 
+    {
+                                  
+	Scanner Sc=new Scanner(System.in);
+
+	System.out.println("Enter the length of array= ");
+	int n = Sc.nextInt();
+
+       	int[] b_nums = new int[n];
+	int count=0 , j=0 , i=0 ;
+
+	for(i=0; i<n ; i++)
+	{
+		b_num[i] = Sc.nextInt();
+	}
+
+        
+	for(i=0; i<n ;i++)
+	{
+		if(b_num[i]==0)
+		{
+			b_nums[j]=0;
+			j++;
+		}
+
+	}
+
+	for(i=j ; i<n ; i++)
+	{
+		b_nums[i]=1;
+	}
+
+	for(i=0; i<n ; i++)
+	{
+		System.out.print(b_nums[i]+" ");
+	}       
+    
+    }
+
+}
+
+
+
+
+Q3)  prints all the positive powers of 2 less than or equal to n
+
+public class PowersOfTwo 
+{
+
+    public static void main(String[] args) 
+    {
+	int n = Integer.parseInt(args[0]);
+
+	if(n>0)
+	{
+		int ans=1;
+		System.out.print(ans+" ");
+		while(ans<=n)
+		{
+			ans=ans*2;
+			if(ans>n)
+			{
+				break;
+			}
+			System.out.print(ans+" ");		
+		}
+   	}
+   	else
+   	{
+   		System.out.print(" ");
+   	}            
+	  
+
+    }
+
+}
+
+
+
+Q4)  Diff between i++ and ++i
+
+  ++i and i++ both increment the value of i by 1 but in a different way.
+
+	i++  ::  uses the current value in expression and then increments the value of i by 1.
+
+	++i  ::  increments the value of i by 1 and then uses the incremented new value value in expression.
+	
+	example:
+	int i = 5;
+	int a = i++; // a = 5, i = 6
+	int b = ++a; // b = 6, a = 6
+
+
+Q5)In a for loop, and can be statements more complicated than declaring, initializing, and updating a loop-control 
+variable. How can I take advantage of this ability?
+==>[did not understand the Question]
+
+
+Q6)Can I use a double variable as a loop-control variable in a for loop?
+==> Yes .
+
+
+Q7) for and while loop exclusive uses:
+
+The 'for' loop used only when we already knew the number of iterations. The 'while' loop used only when the number of iteration are not exactly known.
+
+cases where for loop is to be used instead of while =
+	I use 'while' when I don't necessarily need a counter, for example when you are reading from a file and you are waiting to reach EOF.
+ In this case 'for' may not be the best alternative. When you are going through items on an array I'd rather use 'for' because it conveys intent better.
+
+cases where while loop is to be used instead of for =
+If I am performing a logic-based loop, then a WHILE would make for the cleanest implementation.
+
+
+Q8) Bubble sort:
+
+static void bubbleSort(int a[], int n)
+    {
+        int i, j, temp;
+        boolean swapped;
+        for (i = 0; i < n - 1; i++) 
+        {
+            swapped = false;
+            for (j = 0; j < n - i - 1; j++) 
+            {
+                if (a[j] > a[j + 1]) 
+                {
+                    // swap a[j] and a[j+1]
+                    temp = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+
+            if (swapped == false)     // IF no two elements were swapped by inner loop, then break
+                break;
+        }
+    }
+
+
+Q9)  find if the entered year is a leap year or not
+
+import java.util.Scanner;
+public class LeapYear {
+
+    public static void main(String[] args) {
+
+    	int year;
+    	Scanner scan = new Scanner(System.in);
+    	System.out.println("Enter any Year:");
+    	year = scan.nextInt();
+    	scan.close();
+        boolean isLeap = false;
+
+        if(year % 4 == 0)
+        {
+            if( year % 100 == 0)
+            {
+                if ( year % 400 == 0)
+                    isLeap = true;
+                else
+                    isLeap = false;
+            }
+            else
+                isLeap = true;
+        }
+        else {
+            isLeap = false;
+        }
+
+        if(isLeap==true)
+            System.out.println(year + " is a Leap Year.");
+        else
+            System.out.println(year + " is not a Leap Year.");
+    }
+}
+
+
+Q10)
+
+public class GreatestCommonDivisor 
+{
+    public static int gcd(int p, int q) 
+    {
+        if (q == 0) 
+	{
+            return p;
+        }
+        return gcd(q, p % q);
+    }
+
+
+    public static void main(String[] args) 
+    {
+       System.out.println( gcd(4, 16)) ;       // 4
+        System.out.println( gcd(16, 4)) ;    // 4
+        System.out.println( gcd(15, 60)) ;    // 15
+        System.out.println( gcd(15, 65)) ;    // 5
+        System.out.println( gcd(1052, 52)) ;  // 4
+    }
+}
+
+
+Q11)
+
+class NumberToBinary 
+{
+    
+    static void decToBinary(int n)
+    {
+        
+        int[] binaryNum = new int[32];
+ 
+        int i = 0;
+        while (n > 0) 
+	{
+                                        // storing remainder in binary array
+            binaryNum[i] = n % 2;
+            n = n / 2;
+            i++;
+        }
+ 
+                                       // printing binary array in reverse order
+        for (int j = i - 1; j >= 0; j--)
+            System.out.print(binaryNum[j]);
+    }
+ 
+     
+
+
+    public static void main(String[] args)
+    {
+        int n = 19;
+        decToBinary(n);
+
+	int n = 1000000;
+        decToBinary(n);
+    }
+}
+
+
+Q 12)
+
+
+
+
+public class CheckerBoard 
+{
+    public static void main(String[] args) 
+    {
+        int n = Integer.parseInt (args[0]);
+
+        for(int row = 0; row < size; ++row) 
+	{
+            for(int col = 0; col < size; ++col) 
+	    {
+
+                if ( (row % 2) == (col % 2) )
+                    System.out.print("* ");
+
+                else
+                    System.out.print("  ");
+
+            }
+
+            System.out.println();
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
