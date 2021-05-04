@@ -7,3 +7,17 @@ for ( variable initialization; condition; variable update )
     {
      block of statements
      }
+
+
+We can use logical operators to validate more than one expression in a single loop.
+For instance, we can combine multiple conditions using and (&&) operator. In this case, the for loop runs as long as both the conditions hold true.
+example:
+for (int a = 1, b = 7; a < 5 && b < 9; a++ , b++) {
+     System.out.println("executing the loop " + a + "th time");
+}
+
+Similarly, we can combine multiple conditions using or (||) operator. In this case, the for loop runs as long as either of the conditions holds true.
+example:
+for (int a = 1, b = 7; a < 5 || b < 9; a++ , b++) {
+     System.out.println("executing the loop " + a + "th time");
+}
