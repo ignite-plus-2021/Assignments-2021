@@ -1,0 +1,81 @@
+q4 what is the difference between ++i and i++?
+//
+++i is precrement operation whereas i++ is postincrement operation.
+i.e, in ++i the value of the i will be incremented before evaluating any expression
+IN i++    the expression will be evaluated first with initial value of i,then the value of i is incremented.
+
+eg:
+int i=5;
+a=++i;
+value of i will be incremented first to 6 then it is assigned to a
+so (a=6)
+
+int i=5;
+a=i++;
+value of i will be assigned to a then i value is incremented;
+so a=5 and i=6
+
+
+
+
+Q5 In a for loop, and can be statements more complicated than declaring, initializing, and updating a loop-control variable. How can I take advantage of this ability?
+
+in for-loop there are three basic expressions that are evaluated:initialing,conditional statement and updating(like incrementing)
+
+the syntax for for-loop
+for(intilization,condition,updation)
+
+it is also possible to skip initialization part if the loop variable is already declared and intialized;
+eg:
+
+int i=0;
+for(;i<10;i+=2)
+
+we can make the for loop to run infinite number of times.
+eg;
+for( ; ; )
+
+or we can skip the conditional part in for loop and add some break stmt to come out of the for loop
+
+eg:
+for(int i=1; ; i++)
+{
+if(i==5)
+break;
+}
+this loop will iterate for 5 times and when i=5 control will come out of the for loop
+
+it is also possible to use several varaibles in for loop using comma operator
+it is alo possible to use logical operator  lke && ,|| in the conditional expression..
+eg:
+for(int i=0,j=0 ;i<5 && j<10  ;j++,i++)
+
+
+for-each loop
+this is more convenient to use than conventional for loop to iterate over collections like arraylist,linkedlist etc;
+syntax:
+
+for (varibale_type var:collection)
+
+
+
+
+q6 Can I use a double variable as a loop-control variable in a for loop?
+
+Yes it is completely possible to use double variable in a for loop....these variables should be separated by commas.
+and if it required to control the loop based on the values of both the variables then the conditional expressions can be chained via logical operators
+like && or ||
+
+eg:
+for(int i=0,j=0;i<10 && j<5;j++,i++)
+{
+
+}
+
+
+Q7.Are there cases where I must use a for loop but not a while, or vice versa?
+
+It is absolutely fine to use for and while interchangebly,but there are situations where the use of these loops is restricted to only one.i.e either for or while.
+
+for loop is basically used when the number of iterations is known prior.
+where as while loop is used when the no of iterations is not known.i.e it depends on the value(result) of some expressions
