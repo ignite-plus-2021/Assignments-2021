@@ -1,0 +1,4 @@
+All for loops can be written as while loops, and vice-versa.
+
+A for loop is used when we know how many times the loop should run. 
+and if we are not sure about iterations then While loop is used.
