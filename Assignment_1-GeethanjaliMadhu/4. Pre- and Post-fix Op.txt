@@ -1,0 +1,3 @@
+Pre-Increment (++i) is the prefix version of increment, used when the value is to be incremented prior to using it in the statement.
+
+Post-Increment (i++) is the postfix version which is used when we desire the current value to used in the statement following which it is to be incrmented.
