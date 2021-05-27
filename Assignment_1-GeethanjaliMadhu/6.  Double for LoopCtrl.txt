@@ -1,0 +1,3 @@
+Yes, a double variable can be used as a loop control variable in a for loop, especially in cases where looping or increment/decrement by fractional values is desried.
+
+However, when doing so, comparing with == for loop terminating condition must not be done, as precision errors may arise and lead to an infinite loop. It is therefore better suited to use, say, <= in such scenarios.
