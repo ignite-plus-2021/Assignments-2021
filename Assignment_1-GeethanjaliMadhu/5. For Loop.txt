@@ -1,0 +1,7 @@
+Genrally, a for loop has the following syntax:
+  for(initilization; condition checking; reinitialization)
+  {
+    <loop body>
+  }
+
+We could have more than one counting variable in the initilization/reinitialization statement(s). Also, there can be more than one condition to check in each iteration, joined using either && or ||. Besides these, some additional operation on a variable can be written within the loop instead of in loop body (e.g. like a ternary operation)
