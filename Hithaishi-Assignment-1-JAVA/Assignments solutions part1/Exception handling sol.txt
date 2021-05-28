@@ -1,0 +1,39 @@
+EXCEPTION HANDLING
+
+
+package com.company;
+import java.util.Scanner;
+class MyException extends Exception
+{
+
+}
+
+public class Main {
+
+    static boolean checkZip(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter zip code");
+        String zip = sc.next();
+        String regex = "\\d{5}(-\\d{4})?";
+        System.out.println("The zip code is: " + zip);
+        if(zip.matches(regex))
+            return true;
+        else
+            return false;
+    }
+    public static void main(String args[])
+    {
+        try
+        {
+            if(checkZip())
+
+                System.out.println("Delivery available in your area");
+            else
+                throw new MyException();
+        }
+        catch (MyException ex)
+        {
+            System.out.println("Not deliverable to this zipcode");
+        }
+    }
+}
